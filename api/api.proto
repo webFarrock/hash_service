@@ -1,0 +1,25 @@
+syntax = "proto3";
+option go_package = "hash_service;hash_service";
+package hash_service;
+
+service Hashes{
+  rpc Generate(ArrayOfStrings) returns (ArrayOfHash){}
+  rpc Check(Filter) returns (ArrayOfHash){}
+}
+
+message ArrayOfStrings{
+  repeated string list = 1;
+}
+
+message ArrayOfHash{
+  repeated Hash list = 1;
+}
+
+message Filter {
+  repeated int64 Ids = 1;
+}
+
+message Hash{
+  int64 Id = 1;
+  string HashString = 2;
+}
