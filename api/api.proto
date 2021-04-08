@@ -16,10 +16,10 @@ message ArrayOfHash{
 }
 
 message Filter {
-  repeated int64 Ids = 1;
+  repeated int64 ids = 1;
 }
 
 message Hash{
-  int64 Id = 1;
-  string HashString = 2;
+  int64 id = 1;
+  string hash = 2;
 }
